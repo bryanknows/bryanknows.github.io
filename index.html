@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Bryan Beato builds AI and process automation for property operations and leasing teams.">
+<title>Bryan Beato Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html{color-scheme:light}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+/* Layout: a single reading column; each project is a "work order" with an input → process → output pipeline strip, the page's signature. */
+:root{
+  --bg:#F3F6F5; --surface:#FFFFFF; --ink:#13201D; --muted:#55645F; --line:#D5DEDB;
+  --accent:#0E6B5A; --accent-soft:#DCEFEA; --flag:#A5650B; --flag-soft:#F6EAD6; --retired:#6C6F7A; --retired-soft:#E7E8EC;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1513; --surface:#151F1C; --ink:#E4ECE9; --muted:#9AABA5; --line:#27352F;
+  --accent:#5CC9AF; --accent-soft:#163A32; --flag:#E2A54A; --flag-soft:#3A2C14; --retired:#A3A7B3; --retired-soft:#262830; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1513; --surface:#151F1C; --ink:#E4ECE9; --muted:#9AABA5; --line:#27352F;
+  --accent:#5CC9AF; --accent-soft:#163A32; --flag:#E2A54A; --flag-soft:#3A2C14; --retired:#A3A7B3; --retired-soft:#262830; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+.wrap{max-width:860px;margin:0 auto;padding-block:56px 72px;display:flex;flex-direction:column;gap:72px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:20px}
+.hero h1{font-size:clamp(40px,7vw,68px);font-weight:800;letter-spacing:-.02em}
+.hero h1 span{color:var(--accent)}
+.lede{font-size:clamp(18px,2.3vw,21px);max-width:60ch;color:var(--ink);margin:0}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:12px}
+.fact{padding:16px 12px 16px 0;display:flex;flex-direction:column;gap:2px}
+.fact + .fact{padding-left:16px;border-left:1px solid var(--line)}
+.fact b{font-family:var(--display);font-size:28px;font-weight:700;font-variant-numeric:tabular-nums}
+.fact small{font-size:13px;color:var(--muted);line-height:1.35}
+.hero .links{display:flex;flex-wrap:wrap;gap:12px 24px;font-size:15px}
+
+/* sections */
+section{display:flex;flex-direction:column;gap:24px}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.sec-head h2{font-size:clamp(26px,4vw,34px);font-weight:700}
+.sec-head p{margin:0;color:var(--muted);max-width:62ch}
+
+/* work orders */
+.orders{display:flex;flex-direction:column;gap:20px}
+.order{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.order-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px}
+.order h3{font-size:22px;font-weight:700}
+.wo{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.order p{margin:0;max-width:66ch}
+.pipe{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:8px}
+.step{border:1px dashed var(--line);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.step .label{font-size:11px}
+.step span:last-child{font-size:14px;line-height:1.4}
+.arrow{align-self:center;color:var(--accent);font-family:var(--mono)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font-family:var(--mono);font-size:12px;padding:3px 8px;border-radius:3px;background:var(--bg);border:1px solid var(--line);color:var(--muted)}
+.status{font-family:var(--mono);font-size:12px;font-weight:500;padding:3px 8px;border-radius:3px}
+.s-live{background:var(--accent-soft);color:var(--accent)}
+.s-demo{background:var(--flag-soft);color:var(--flag)}
+.s-retired{background:var(--retired-soft);color:var(--retired)}
+.note{font-size:14px;color:var(--muted)}
+
+/* approach */
+.rules{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.rules li{padding:18px 20px 18px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:4px;min-width:0}
+.rules li:nth-child(even){padding-left:20px;border-left:1px solid var(--line)}
+.rules b{font-family:var(--display);font-size:18px;font-weight:700}
+.rules span{color:var(--muted);font-size:15px}
+
+/* toolkit */
+.kit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.kit div{display:flex;flex-direction:column;gap:10px;min-width:0}
+.kit .chips{display:flex;flex-wrap:wrap;gap:8px}
+
+/* history */
+.history{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.history li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.history li:first-child{border-top:1px solid var(--line)}
+.history time{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
+.history b{font-weight:600}
+.history span{display:block;color:var(--muted);font-size:15px}
+
+footer{border-top:1px solid var(--line);padding-top:24px;display:flex;flex-direction:column;gap:8px}
+footer h2{font-size:26px}
+footer p{margin:0;color:var(--muted);max-width:62ch}
+
+@media (max-width:640px){
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact:nth-child(3){padding-left:0;border-left:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--line)}
+  .pipe{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg);justify-self:start;padding-left:12px;line-height:1}
+  .rules,.kit{grid-template-columns:1fr}
+  .rules li:nth-child(even){padding-left:0;border-left:0}
+  .history li{grid-template-columns:1fr;gap:2px}
+  .order{padding:18px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .order{transition:border-color .2s}
+  .order:hover{border-color:var(--accent)}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="label">Property operations · AI &amp; process automation</div>
+    <h1>Bryan Beato builds the systems <span>behind the leasing desk.</span></h1>
+    <p class="lede">I find the manual steps in leasing and property operations, decide what should be automated, redesigned, or left alone, and build tools a non-technical team can run day to day.</p>
+    <div class="facts">
+      <div class="fact"><b>~300</b><small>beds supported in a student and young-professional portfolio</small></div>
+      <div class="fact"><b>283</b><small>units tracked in one availability view</small></div>
+      <div class="fact"><b>~23</b><small>backend functions running the internal platform</small></div>
+      <div class="fact"><b>BS</b><small>Applied Mathematics, actuarial track</small></div>
+    </div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/bryanknows" target="_blank" rel="noopener">LinkedIn: linkedin.com/in/bryanknows</a>
+      <a href="#work">See the work</a>
+    </div>
+  </header>
+
+  <section id="work">
+    <div class="sec-head">
+      <div class="label">Selected work</div>
+      <h2>Work orders</h2>
+      <p>Each project is shown the way I scope one: what comes in, what the system does, and what the team gets. Company data and code stay private; descriptions are high level.</p>
+    </div>
+
+    <div class="orders">
+
+      <article class="order">
+        <div class="order-top"><h3>Transcript to verified action items</h3><span class="wo">WO-01 · Python + Claude API</span></div>
+        <p>Turns a meeting transcript into action items that each link back to the exact lines they came from. Anything the model can't back up with a real quote is rejected in code, so invented tasks never reach the task board.</p>
+        <div class="pipe">
+          <div class="step"><span class="label">In</span><span>90-minute meeting transcript</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Process</span><span>Line-numbered chunks, structured JSON from Claude, quote check in code</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Out</span><span>Verified items, a review list, and a rejected list with reasons</span></div>
+        </div>
+        <div class="meta"><span class="status s-demo">Demo</span><span class="chip">Python</span><span class="chip">Anthropic SDK</span><span class="chip">Tool use / JSON schema</span><span class="chip">13 tests</span></div>
+        <p class="note">Fixed along the way: real quotes that spanned two lines were failing the check because of the speaker label between them. <a href="https://github.com/bryanknows/transcript-actions" target="_blank" rel="noopener">View the code on GitHub</a></p>
+      </article>
+
+      <article class="order">
+        <div class="order-top"><h3>Company Hub</h3><span class="wo">WO-02 · Internal platform</span></div>
+        <p>An internal property management platform where each department has its own dashboards, all reading from one shared database. Business rules live in SQL views, so every dashboard counts leases and leads the same way.</p>
+        <div class="pipe">
+          <div class="step"><span class="label">In</span><span>Property management reports and team inputs</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Process</span><span>Scheduled sync functions, availability calculation, rent roll loading</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Out</span><span>One live view of applications, units, leases, leads, and showings</span></div>
+        </div>
+        <div class="meta"><span class="status s-live">Live</span><span class="chip">Supabase / Postgres</span><span class="chip">Next.js + React</span><span class="chip">Edge functions</span><span class="chip">Netlify</span></div>
+      </article>
+
+      <article class="order">
+        <div class="order-top"><h3>Lease renewal emails</h3><span class="wo">WO-03 · Resident communications</span></div>
+        <p>Automated renewal outreach to residents nearing the end of their lease, sent in recurring rounds instead of one by one from a spreadsheet.</p>
+        <div class="pipe">
+          <div class="step"><span class="label">In</span><span>Lease end dates</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Process</span><span>Picks residents due for renewal and sends the right round</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Out</span><span>Renewal offers out on time, with no manual sends</span></div>
+        </div>
+        <div class="meta"><span class="status s-live">Live since Oct 2026</span><span class="chip">Email automation</span><span class="chip">Lease data</span></div>
+      </article>
+
+      <article class="order">
+        <div class="order-top"><h3>Lead dedup and round-robin routing</h3><span class="wo">WO-04 · Sales intake</span></div>
+        <p>Stops one prospect who submits the inquiry form three times from becoming three leads for three agents. Duplicates go back to the agent who already owns the lead as a re-engagement alert, and the rotation only advances on genuinely new people.</p>
+        <div class="pipe">
+          <div class="step"><span class="label">In</span><span>Prequalification form submissions</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Process</span><span>Match on normalized phone, then email; sticky ownership</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Out</span><span>Fair assignment counts and no manual reassigning</span></div>
+        </div>
+        <div class="meta"><span class="chip">Google Forms</span><span class="chip">Google Sheets</span><span class="chip">Apps Script</span></div>
+      </article>
+
+      <article class="order">
+        <div class="order-top"><h3>Leasing reports and availability</h3><span class="wo">WO-05 · Reporting</span></div>
+        <p>Property management reports flow into Google Sheets dashboards automatically, and a separate availability view shows open and upcoming units across the portfolio, with an occupancy timeline for one building.</p>
+        <div class="pipe">
+          <div class="step"><span class="label">In</span><span>AppFolio report exports</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Process</span><span>Scheduled import, cleanup, and calculated fields</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Out</span><span>Live sales numbers and vacancy lists for leadership</span></div>
+        </div>
+        <div class="meta"><span class="status s-live">Live</span><span class="chip">AppFolio</span><span class="chip">Google Sheets</span><span class="chip">Apps Script</span></div>
+      </article>
+
+      <article class="order">
+        <div class="order-top"><h3>Move-in survey</h3><span class="wo">WO-06 · Resident intake</span></div>
+        <p>A web form new residents fill out at move-in, so feedback and move-in details land in one structured place instead of scattered emails.</p>
+        <div class="pipe">
+          <div class="step"><span class="label">In</span><span>New resident answers</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Process</span><span>Hosted form with structured fields</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Out</span><span>Responses the team can sort and act on</span></div>
+        </div>
+        <div class="meta"><span class="status s-live">Live</span><span class="chip">Web form</span><span class="chip">Netlify</span></div>
+      </article>
+
+      <article class="order">
+        <div class="order-top"><h3>Inbox draft agent</h3><span class="wo">WO-07 · AI assistant</span></div>
+        <p>An AI agent that checked the leasing inbox every 15 minutes and drafted replies to tenant questions, leads, and move-out requests in the team's voice. It only ever created drafts, so a person approved every message.</p>
+        <div class="pipe">
+          <div class="step"><span class="label">In</span><span>New business emails</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Process</span><span>Scope rules skip auto-notifications and listing alerts</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Out</span><span>Ready-to-review Gmail drafts</span></div>
+        </div>
+        <div class="meta"><span class="status s-retired">Retired</span><span class="chip">Claude</span><span class="chip">Gmail</span><span class="chip">Style guide prompt</span></div>
+        <p class="note">Retired once the inbox mix shifted toward automated alerts. Knowing when to switch something off is part of the job.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="label">Approach</div>
+      <h2>How I decide what to build</h2>
+    </div>
+    <ul class="rules">
+      <li><b>Map it before touching it</b><span>I sit with the people doing the work and write down every step, including the workarounds nobody mentions.</span></li>
+      <li><b>Automate, redesign, or leave it</b><span>Some steps should disappear, some need a better process, and some are fine done by hand.</span></li>
+      <li><b>People approve what residents see</b><span>Anything that touches a listing, an applicant, or a tenant message gets a human check before it goes out.</span></li>
+      <li><b>Built for the next person</b><span>Every tool ships with a plain-language SOP so the team can run and fix it without me.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="label">Toolkit</div>
+      <h2>What I work with</h2>
+    </div>
+    <div class="kit">
+      <div><span class="label">Use daily</span><div class="chips"><span class="chip">Claude &amp; Claude Code</span><span class="chip">ChatGPT</span><span class="chip">Anthropic API</span><span class="chip">Google Sheets</span><span class="chip">Apps Script</span><span class="chip">Supabase / SQL</span><span class="chip">Next.js + React</span><span class="chip">Python</span><span class="chip">AppFolio</span></div></div>
+      <div><span class="label">Familiar with</span><div class="chips"><span class="chip">Zapier</span><span class="chip">n8n</span><span class="chip">Make</span><span class="chip">REST APIs &amp; webhooks</span><span class="chip">GitHub</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="label">Background</div>
+      <h2>Where the habits come from</h2>
+    </div>
+    <ol class="history">
+      <li><time>2025 – present</time><div><b>Zuma Housing</b> · Sales Back-End Admin Specialist<span>Leasing for a UCLA-area portfolio, plus solo builder of the internal platform and automations above.</span></div></li>
+      <li><time>2020 – 2025</time><div><b>Pru Life UK</b> · Unit Manager, Licensed Financial Consultant<span>Led a team of 30+ consultants.</span></div></li>
+      <li><time>2018 – 2020</time><div><b>Southville International School and Colleges</b> · Mathematics Teacher<span>Built an automated mailing system and trained Math Olympiad students.</span></div></li>
+      <li><time>2012 – 2014</time><div><b>Accenture</b> · Data Analyst</div></li>
+      <li><time>2012</time><div><b>Polytechnic University of the Philippines</b> · BS Applied Mathematics (Actuarial Mathematics)</div></li>
+    </ol>
+  </section>
+
+  <footer>
+    <h2>Let's talk</h2>
+    <p>Based in the Philippines, working remotely with US teams. Walkthroughs of any project above are available on a call, with confidential data removed.</p>
+    <a href="https://www.linkedin.com/in/bryanknows" target="_blank" rel="noopener">Message me on LinkedIn: linkedin.com/in/bryanknows</a>
+  </footer>
+
+</div>
+</body>
+</html>
