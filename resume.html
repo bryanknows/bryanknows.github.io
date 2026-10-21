@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Resume of Bryan Beato: property operations and AI and process automation.">
+<meta name="description" content="Resume of Bryan Beato: sales operations, internal tools and automation, property management technology.">
 <title>Bryan Beato Resume</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,11 +35,12 @@ h2{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.1em;te
 .job{display:grid;grid-template-columns:132px 1fr;gap:16px;padding-block:10px}
 .job + .job{border-top:1px dashed var(--line)}
 .when{font-family:var(--mono);font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:3px}
+.proj h3{font-size:16.5px}
 .job h3{font-family:var(--display);font-weight:600;font-size:18px;margin:0;line-height:1.25}
 .org{color:var(--muted);font-size:14px}
 ul{margin:6px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
 li{padding-left:2px}
-.skills{display:grid;grid-template-columns:132px 1fr;gap:6px 16px;margin:0}
+.skills{display:grid;grid-template-columns:110px 1fr;gap:6px 16px;margin:0}
 .skills dt{font-weight:600;font-size:14px}
 .skills dd{margin:0;color:var(--ink)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -73,36 +74,44 @@ li{padding-left:2px}
 <main class="sheet">
   <header>
     <h1>Bryan Beato</h1>
-    <div class="role">Property operations · AI &amp; process automation</div>
+    <div class="role">Sales Operations Specialist · Internal Tools and Automation · Property Management Technology</div>
     <div class="contact">
-      <span>Las Piñas, Philippines · Remote, US hours</span>
-      <a href="https://bryanknows.github.io">bryanknows.github.io</a>
-      <a href="https://github.com/bryanknows">github.com/bryanknows</a>
+      <span>jambryhane18@yahoo.com</span>
+      <span>Las Piñas, Philippines</span>
       <a href="https://www.linkedin.com/in/bryanknows">linkedin.com/in/bryanknows</a>
+      <a href="https://bryanknows.github.io">bryanknows.github.io</a>
     </div>
   </header>
 
   <section>
-    <h2>Summary</h2>
-    <p class="summary">Leasing and operations specialist who builds the tools behind the work. I map how a team actually works, decide what to automate, redesign, or leave manual, and ship systems non-technical staff can run, from Google Sheets and Apps Script automations to an internal platform on Supabase and Next.js and Claude API integrations. Background in data analysis and applied mathematics.</p>
+    <h2>Professional summary</h2>
+    <p class="summary">Sales operations specialist with 10+ years across sales, data analysis, and internal systems development. Currently supports leasing and sales for a 300-bed student housing portfolio while serving as its sole internal developer, building the AppFolio data pipelines, SQL dashboards, and lead-routing systems the team runs on. Previously led a team of 30+ consultants.</p>
   </section>
 
   <section>
-    <h2>Experience</h2>
+    <h2>Core skills</h2>
+    <dl class="skills">
+      <dt>Technical</dt><dd>SQL, PostgreSQL, Supabase, Google Apps Script, JavaScript, Next.js, React, Vercel, Google Sheets automation, Google Workspace, Microsoft Excel (advanced), data modeling, API integration, dashboard development</dd>
+      <dt>Operations</dt><dd>Sales operations, CRM and lead management, lead routing and deduplication, funnel and conversion analysis, occupancy reporting, process improvement, workflow documentation, SOP development, reporting automation</dd>
+      <dt>Real Estate</dt><dd>AppFolio, property management systems, lease administration, contract management, tenant relations, listing and MLS syndication, multi-property portfolio management</dd>
+      <dt>Leadership</dt><dd>Team leadership, performance management, coaching and training, stakeholder communication, cross-department coordination, client relationship management</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Professional experience</h2>
 
     <div class="job">
       <div class="when">01/2025 – Present</div>
       <div>
-        <h3>Sales Back-End Admin Specialist</h3>
-        <div class="org">Zuma Housing · Student and young-professional housing, UCLA area (remote)</div>
+        <h3>Sales Admin Specialist (Sales Operations and Internal Tools)</h3>
+        <div class="org">Zuma Housing · Los Angeles, CA (Remote)</div>
         <ul>
-          <li>Handle leasing operations for a ~300-bed portfolio: applications, renewals, move-ins, move-outs, and tenant communications in AppFolio.</li>
-          <li>Built and maintain the company's internal platform as its solo developer: Supabase (Postgres), Next.js and React, ~23 edge functions for AppFolio sync, unit availability, and rent roll loading.</li>
-          <li>Launched automated lease renewal emails (Oct 2026) that go out to residents in scheduled rounds.</li>
-          <li>Automated AppFolio reporting into Google Sheets dashboards and built an availability view covering 283 units.</li>
-          <li>Designed lead deduplication and round-robin routing in Apps Script so repeat inquiries stay with the original agent.</li>
-          <li>Showed leadership that lower year-to-date sales came from a shift toward longer leases rather than weaker execution.</li>
-          <li>Built a move-in survey web form and an AI inbox agent that drafted tenant replies for human review.</li>
+          <li>Support leasing and sales operations for a 300-bed student and young-professional housing portfolio serving the UCLA market.</li>
+          <li>Serve as sole internal developer while carrying a full leasing and sales workload, designing and shipping every operational system the sales team uses.</li>
+          <li>Built an internal property management platform on Supabase (PostgreSQL, Auth, Realtime) with a Next.js and React front end, modeling applications, units, leases, tenants, leads, and showings for 5 to 10 daily users.</li>
+          <li>Developed an automated reporting pipeline that pulls AppFolio exports from email into Google Sheets and Supabase, replacing a recurring manual reporting cycle.</li>
+          <li>Processed lease agreements and contracts to an audit-ready standard of accuracy and compliance, and owned tenant and lease records supporting reporting and reconciliation.</li>
         </ul>
       </div>
     </div>
@@ -110,10 +119,12 @@ li{padding-left:2px}
     <div class="job">
       <div class="when">01/2020 – 01/2025</div>
       <div>
-        <h3>Unit Manager / Licensed Financial Consultant</h3>
-        <div class="org">Pru Life UK</div>
+        <h3>Unit Manager and Licensed Financial Consultant</h3>
+        <div class="org">Pru Life UK · Philippines</div>
         <ul>
-          <li>Led and coached a team of 30+ financial consultants.</li>
+          <li>Recruited, led, and developed a unit of 30 or more financial consultants, running performance evaluations and coaching underperformers back to standard.</li>
+          <li>Advised clients on long-term financial goals through strategic asset allocation and risk management.</li>
+          <li>Built durable client relationships that sustained retention and repeat business across a five-year tenure.</li>
         </ul>
       </div>
     </div>
@@ -122,10 +133,10 @@ li{padding-left:2px}
       <div class="when">05/2018 – 06/2020</div>
       <div>
         <h3>Mathematics Teacher</h3>
-        <div class="org">Southville International School and Colleges</div>
+        <div class="org">Southville International School and Colleges · Philippines</div>
         <ul>
-          <li>Built an automated mailing system for school communications.</li>
-          <li>Trained students for Math Olympiad competitions.</li>
+          <li>Built an automated mailing system that streamlined recurring updates to teachers and stakeholders.</li>
+          <li>Trained students for local and international mathematics Olympiads, producing multiple award recipients.</li>
         </ul>
       </div>
     </div>
@@ -134,40 +145,67 @@ li{padding-left:2px}
       <div class="when">12/2012 – 12/2014</div>
       <div>
         <h3>Data Analyst</h3>
-        <div class="org">Accenture Inc.</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Project</h2>
-    <div class="job">
-      <div class="when">2026</div>
-      <div>
-        <h3>Transcript to verified action items</h3>
-        <div class="org"><a href="https://github.com/bryanknows/transcript-actions">github.com/bryanknows/transcript-actions</a></div>
+        <div class="org">Accenture Inc. · Philippines</div>
         <ul>
-          <li>Python tool that calls the Claude API with a forced JSON schema and checks every action item's quote against the transcript in code, rejecting invented items. 13 automated tests.</li>
+          <li>Produced management reporting on transaction trends and irregularities, and resolved complex transaction exceptions under high-volume conditions.</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>Skills</h2>
-    <dl class="skills">
-      <dt>AI</dt><dd>Claude, Claude Code, Anthropic API, ChatGPT, prompt and workflow design</dd>
-      <dt>Build</dt><dd>Google Apps Script, Python, Supabase / SQL, Next.js + React, GitHub, Netlify</dd>
-      <dt>Data</dt><dd>Advanced Google Sheets and Excel, reporting dashboards, data cleanup</dd>
-      <dt>Automation</dt><dd>REST APIs and webhooks; familiar with Zapier, n8n, and Make</dd>
-      <dt>Property</dt><dd>AppFolio, leasing, renewals, resident communications</dd>
-    </dl>
+    <h2>Key projects</h2>
+
+    <div class="job proj">
+      <div class="when">Platform</div>
+      <div>
+        <h3>Internal Property Management Platform</h3>
+        <div class="org">Supabase, PostgreSQL, Next.js, React, Vercel</div>
+        <ul>
+          <li>Architected and built the company platform solo, centralizing business logic in SQL views so leasing, accounting, and marketing read from one source of truth.</li>
+          <li>Designed a lease-type taxonomy that let leadership separate genuinely new business from renewals and transfers for the first time.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job proj">
+      <div class="when">Reporting</div>
+      <div>
+        <h3>Automated Sales Reporting System</h3>
+        <div class="org">Google Apps Script, Google Sheets API</div>
+        <ul>
+          <li>Built a 5,800-line system that auto-imports AppFolio reports from email into Sheets, generates per-property dashboards, and rolls highlights into one executive view.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job proj">
+      <div class="when">Dashboard</div>
+      <div>
+        <h3>Unit Availability Dashboard</h3>
+        <div class="org">283 units, multi-property portfolio</div>
+        <ul>
+          <li>Collapsed three separate date fields into one derived availability answer, eliminating spreadsheet cross-referencing for agents during showings.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job proj">
+      <div class="when">Sales intake</div>
+      <div>
+        <h3>Lead Deduplication and Routing Engine</h3>
+        <div class="org">Google Forms, Apps Script</div>
+        <ul>
+          <li>Built phone-normalized deduplication with email fallback, sticky agent ownership, and round-robin distribution that advances only on genuinely new leads.</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="two">
     <div>
       <h2>Education</h2>
-      <p><b>BS Applied Mathematics</b> (Actuarial Mathematics)<br><span class="org">Polytechnic University of the Philippines, 2012</span></p>
+      <p><b>Bachelor of Science in Applied Mathematics</b> (Actuarial Mathematics)<br><span class="org">Polytechnic University of the Philippines, 2012</span></p>
     </div>
     <div>
       <h2>Certifications</h2>
