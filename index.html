@@ -3,7 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Bryan Beato builds AI and process automation for property operations and leasing teams.">
+<meta name="description" content="Bryan Beato builds automation and internal tools for property operations: leasing reports, lead routing, renewal emails, and a shared company platform.">
+<meta property="og:title" content="Bryan Beato · Automation and internal tools for property operations">
+<meta property="og:description" content="Manual leasing workflows, scattered reports, and repeat admin tasks turned into systems a team runs every day.">
+<meta property="og:url" content="https://bryanknows.github.io/">
+<meta property="og:type" content="website">
 <title>Bryan Beato Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,6 +53,48 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
 .fact b{font-family:var(--display);font-size:28px;font-weight:700;font-variant-numeric:tabular-nums}
 .fact small{font-size:13px;color:var(--muted);line-height:1.35}
 .hero .links{display:flex;flex-wrap:wrap;gap:12px 24px;font-size:15px}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:-4px}
+.roles .chip{color:var(--ink);background:var(--surface)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{font-family:var(--body);font-weight:600;font-size:15px;padding:10px 18px;border-radius:4px;border:1px solid var(--accent);color:var(--accent);background:var(--surface);text-decoration:none}
+.btn.primary{background:var(--accent);color:#fff}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.facts-note{font-size:13px;color:var(--muted);margin:0;max-width:66ch}
+.hiring{font-size:15px;color:var(--muted);margin:0;max-width:66ch}
+.hiring b{color:var(--ink);font-weight:600}
+
+/* case studies */
+details.case{border-top:1px dashed var(--line);padding-top:12px}
+details.case summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:15px;color:var(--accent);list-style:none;display:flex;align-items:center;gap:8px}
+details.case summary::before{content:"+";font-family:var(--mono);width:18px;height:18px;border:1px solid var(--accent);border-radius:3px;display:inline-grid;place-items:center;font-size:13px;line-height:1}
+details.case[open] summary::before{content:"−"}
+details.case summary::-webkit-details-marker{display:none}
+.case-body{display:grid;grid-template-columns:140px 1fr;gap:10px 16px;margin-top:14px;font-size:15px}
+.case-body dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.case-body dd{margin:0;max-width:62ch}
+.case-body dd ul{margin:0;padding-left:18px}
+.case-body dd li+li{margin-top:4px}
+@media (max-width:640px){.case-body{grid-template-columns:1fr;gap:2px 0}.case-body dd{margin-bottom:10px}}
+
+/* diagrams and sample-data mock */
+.figure{margin:0;display:flex;flex-direction:column;gap:8px}
+.figure figcaption{font-size:13px;color:var(--muted)}
+.dia{width:100%;height:auto;display:block;font-family:var(--body);font-size:13px}
+.dia .box{fill:var(--surface);stroke:var(--line);stroke-width:1}
+.dia .box.db{fill:var(--accent-soft);stroke:var(--accent)}
+.dia .box.rule{stroke:var(--accent);stroke-dasharray:4 3}
+.dia .t{fill:var(--ink)}
+.dia .m{fill:var(--muted);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em}
+.dia .edge{fill:none;stroke:var(--accent);stroke-width:1.4;marker-end:url(#ah)}
+.dia .gate{fill:var(--flag-soft);stroke:var(--flag)}
+.dia .gate-t{fill:var(--flag);font-family:var(--mono);font-size:10.5px}
+.mock{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+.mock th,.mock td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.mock th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.mock .pill{font-family:var(--mono);font-size:11px;padding:2px 7px;border-radius:3px;background:var(--accent-soft);color:var(--accent)}
+.mock .pill.soon{background:var(--flag-soft);color:var(--flag)}
+.mock-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+.mock-wrap .label{padding:8px 10px;border-bottom:1px solid var(--line)}
 
 /* sections */
 section{display:flex;flex-direction:column;gap:24px}
@@ -124,19 +170,28 @@ footer p{margin:0;color:var(--muted);max-width:62ch}
   <header class="hero">
     <div class="label">Property operations · AI &amp; process automation</div>
     <h1>Bryan Beato builds the systems <span>behind the leasing desk.</span></h1>
-    <p class="lede">I find the manual steps in leasing and property operations, decide what should be automated, redesigned, or left alone, and build tools a non-technical team can run day to day.</p>
+    <p class="lede">I build automation and internal tools for property operations. Manual leasing workflows, scattered reports, and repeat admin tasks become systems a non-technical team runs every day.</p>
+    <div class="roles" aria-label="Areas of work">
+      <span class="chip">AI &amp; process automation</span><span class="chip">Property operations</span><span class="chip">Dashboards &amp; reporting</span><span class="chip">Internal tools</span>
+    </div>
+    <p class="hiring"><b>Open to remote roles</b> in AI or process automation, business systems, and property operations automation, working with US teams from the Philippines.</p>
+    <div class="actions">
+      <a class="btn primary" href="#work">Explore projects</a>
+      <a class="btn" href="resume.html">View résumé</a>
+      <a class="btn" href="mailto:jambryhane18@yahoo.com?subject=Your%20portfolio">Contact me</a>
+    </div>
     <div class="facts">
       <div class="fact"><b>~300</b><small>beds supported in a student and young-professional portfolio</small></div>
       <div class="fact"><b>283</b><small>units tracked in one availability view</small></div>
       <div class="fact"><b>~23</b><small>backend functions running the internal platform</small></div>
       <div class="fact"><b>BS</b><small>Applied Mathematics, actuarial track</small></div>
     </div>
+    <p class="facts-note">How these are counted: beds and units come from the property management system's unit directory for the portfolio I support; backend functions are the scheduled and on-demand edge functions deployed on the internal platform's database as of October 2026.</p>
     <div class="links">
       <a href="https://www.linkedin.com/in/bryanknows" target="_blank" rel="noopener">LinkedIn: linkedin.com/in/bryanknows</a>
-      <a href="resume.html">Resume</a>
-      <a href="Bryan_Beato_CV.pdf">Resume (PDF)</a>
+      <a href="mailto:jambryhane18@yahoo.com">jambryhane18@yahoo.com</a>
+      <a href="Bryan_Beato_CV.pdf">Résumé (PDF)</a>
       <a href="https://github.com/bryanknows" target="_blank" rel="noopener">GitHub</a>
-      <a href="#work">See the work</a>
     </div>
   </header>
 
@@ -144,7 +199,7 @@ footer p{margin:0;color:var(--muted);max-width:62ch}
     <div class="sec-head">
       <div class="label">Selected work</div>
       <h2>Work orders</h2>
-      <p>Each project is shown the way I scope one: what comes in, what the system does, and what the team gets. Company data and code stay private; descriptions are high level.</p>
+      <p>Each project is shown the way I scope one: what comes in, what the system does, and what the team gets. <b>Live</b> means it runs in production today, <b>Demo</b> is a working build on sample data, and <b>Retired</b> was in production and has been switched off. Company data and code stay private; descriptions are high level, and the two case studies open for more detail.</p>
     </div>
 
     <div class="orders">
@@ -157,8 +212,8 @@ footer p{margin:0;color:var(--muted);max-width:62ch}
           <div class="step"><span class="label">Process</span><span>Line-numbered chunks, structured JSON from Claude, quote check in code</span></div><span class="arrow" aria-hidden="true">→</span>
           <div class="step"><span class="label">Out</span><span>Verified items, a review list, and a rejected list with reasons</span></div>
         </div>
-        <div class="meta"><span class="status s-demo">Demo</span><span class="chip">Python</span><span class="chip">Anthropic SDK</span><span class="chip">Tool use / JSON schema</span><span class="chip">13 tests</span></div>
-        <p class="note">Fixed along the way: real quotes that spanned two lines were failing the check because of the speaker label between them. <a href="https://github.com/bryanknows/transcript-actions" target="_blank" rel="noopener">View the code on GitHub</a></p>
+        <div class="meta"><span class="status s-demo">Demo</span><span class="chip">Python</span><span class="chip">Anthropic SDK</span><span class="chip">Tool use / JSON schema</span><span class="chip">134 tests</span></div>
+        <p class="note">Fixed along the way: real quotes that spanned two lines were failing the check because of the speaker label between them. Sample transcript, model items, and the verifier's output are in the repo. <a href="https://github.com/bryanknows/transcript-actions" target="_blank" rel="noopener">View the code on GitHub</a></p>
       </article>
 
       <article class="order">
@@ -170,6 +225,76 @@ footer p{margin:0;color:var(--muted);max-width:62ch}
           <div class="step"><span class="label">Out</span><span>One live view of applications, units, leases, leads, and showings</span></div>
         </div>
         <div class="meta"><span class="status s-live">Live</span><span class="chip">Supabase / Postgres</span><span class="chip">Next.js + React</span><span class="chip">Edge functions</span><span class="chip">Netlify</span></div>
+        <details class="case">
+          <summary>Case study: how the Hub came together</summary>
+          <dl class="case-body">
+            <dt>The problem</dt>
+            <dd>Sales, housing, and accounting each kept their own spreadsheets, fed by the same property management reports. The same question ("how many new leases this month?") got a different answer in each one, because each sheet counted renewals and transfers its own way.</dd>
+            <dt>My part</dt>
+            <dd>I designed and built the whole platform on my own while carrying a full leasing workload: the data model, the sync functions, the SQL views, the front end, and the SOPs the team uses to run it.</dd>
+            <dt>Architecture</dt>
+            <dd><figure class="figure">
+              <svg class="dia" viewBox="0 0 640 250" role="img" aria-labelledby="hub-dia-title">
+                <title id="hub-dia-title">Company Hub data flow: property management reports and team inputs pass through scheduled edge functions into one Postgres database, SQL views apply the business rules, and each department's dashboard reads from those views behind a login.</title>
+                <defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="currentColor" style="color:var(--accent)"/></marker></defs>
+                <!-- sources -->
+                <rect class="box" x="8" y="30" width="128" height="52" rx="4"/>
+                <text class="m" x="18" y="48">SOURCE</text><text class="t" x="18" y="68">AppFolio reports</text>
+                <rect class="box" x="8" y="150" width="128" height="52" rx="4"/>
+                <text class="m" x="18" y="168">SOURCE</text><text class="t" x="18" y="188">Team inputs</text>
+                <!-- functions -->
+                <rect class="box" x="176" y="60" width="138" height="112" rx="4"/>
+                <text class="m" x="186" y="78">EDGE FUNCTIONS · ~23</text>
+                <text class="t" x="186" y="100">Scheduled sync</text>
+                <text class="t" x="186" y="120">Availability calc</text>
+                <text class="t" x="186" y="140">Rent roll load</text>
+                <text class="t" x="186" y="160">Lease-type tagging</text>
+                <!-- db -->
+                <rect class="box db" x="354" y="30" width="118" height="78" rx="4"/>
+                <text class="m" x="364" y="48">POSTGRES</text>
+                <text class="t" x="364" y="68">Units · Leases</text>
+                <text class="t" x="364" y="86">Leads · Showings</text>
+                <text class="t" x="364" y="102">Applications</text>
+                <rect class="box rule" x="354" y="136" width="118" height="52" rx="4"/>
+                <text class="m" x="364" y="154">SQL VIEWS</text>
+                <text class="t" x="364" y="174">Business rules</text>
+                <!-- gate -->
+                <rect class="gate" x="498" y="20" width="60" height="212" rx="4"/>
+                <text class="gate-t" transform="translate(533 126) rotate(-90)" text-anchor="middle">LOGIN · AUTH</text>
+                <!-- dashboards -->
+                <rect class="box" x="568" y="36" width="64" height="40" rx="4"/><text class="t" x="576" y="61">Sales</text>
+                <rect class="box" x="568" y="106" width="64" height="40" rx="4"/><text class="t" x="576" y="131">Housing</text>
+                <rect class="box" x="568" y="176" width="64" height="40" rx="4"/><text class="t" x="576" y="201">Accounting</text>
+                <!-- edges -->
+                <path class="edge" d="M136 56 C156 56 156 90 176 90"/>
+                <path class="edge" d="M136 176 C156 176 156 142 176 142"/>
+                <path class="edge" d="M314 100 C334 100 334 70 354 70"/>
+                <path class="edge" d="M413 108 L413 136"/>
+                <path class="edge" d="M472 162 L498 162"/>
+                <path class="edge" d="M558 56 L568 56"/>
+                <path class="edge" d="M558 126 L568 126"/>
+                <path class="edge" d="M558 196 L568 196"/>
+              </svg>
+              <figcaption>Data flow. Every dashboard reads from the same SQL views, so changing a rule once changes every screen.</figcaption>
+            </figure>
+            <ul>
+              <li>Postgres on Supabase holds applications, units, leases, tenants, leads, and showings. Auth gates every page so hub links can't be opened by anyone outside the team.</li>
+              <li>About 23 edge functions pull property management reports on a schedule, compute availability, and load the rent roll.</li>
+              <li>Business rules live in SQL views, so every department's dashboard counts the same way. Change the rule once and every screen updates.</li>
+              <li>Next.js and React front end with one section per department, deployed on Netlify.</li>
+            </ul></dd>
+            <dt>Hard decisions</dt>
+            <dd><ul>
+              <li>A lease-type taxonomy that separates genuinely new business from renewals and transfers. Before it, leadership couldn't tell the two apart in the numbers.</li>
+              <li>Moving the data source from emailed CSV exports to the property management system's reports directly, so the Hub refreshes without anyone forwarding a file.</li>
+              <li>Keeping a Google Sheets two-way sync for the one team that still works in a sheet, instead of forcing everyone onto the Hub at once.</li>
+            </ul></dd>
+            <dt>Results</dt>
+            <dd>Five to ten people use it daily. One number per question across departments, and leadership's monthly new-business, renewal, and transfer counts now come from one view instead of three reconciled spreadsheets.</dd>
+            <dt>Lessons</dt>
+            <dd>Put the rule in the database, not the dashboard. Migrate one department at a time. Write the SOP before calling the tool done.</dd>
+          </dl>
+        </details>
       </article>
 
       <article class="order">
@@ -181,6 +306,7 @@ footer p{margin:0;color:var(--muted);max-width:62ch}
           <div class="step"><span class="label">Out</span><span>Renewal offers out on time, with no manual sends</span></div>
         </div>
         <div class="meta"><span class="status s-live">Live since Oct 2026</span><span class="chip">Email automation</span><span class="chip">Lease data</span></div>
+        <p class="note">Rounds are scheduled from lease end dates. Residents who already renewed, transferred, or are out of scope are skipped, and each resident gets one email per round so nobody is contacted twice. The offer wording comes from a template the team reviewed before launch, and every round logs what went out and what was skipped.</p>
       </article>
 
       <article class="order">
@@ -191,7 +317,8 @@ footer p{margin:0;color:var(--muted);max-width:62ch}
           <div class="step"><span class="label">Process</span><span>Match on normalized phone, then email; sticky ownership</span></div><span class="arrow" aria-hidden="true">→</span>
           <div class="step"><span class="label">Out</span><span>Fair assignment counts and no manual reassigning</span></div>
         </div>
-        <div class="meta"><span class="chip">Google Forms</span><span class="chip">Google Sheets</span><span class="chip">Apps Script</span></div>
+        <div class="meta"><span class="status s-live">Live</span><span class="chip">Google Forms</span><span class="chip">Google Sheets</span><span class="chip">Apps Script</span></div>
+        <p class="note">Matching: phone numbers are reduced to digits and compared first, then emails are lowercased and compared. A match keeps the existing agent as owner and alerts them; only a lead with no match takes the next agent in the rotation.</p>
       </article>
 
       <article class="order">
@@ -203,21 +330,89 @@ footer p{margin:0;color:var(--muted);max-width:62ch}
           <div class="step"><span class="label">Out</span><span>Live sales numbers and vacancy lists for leadership</span></div>
         </div>
         <div class="meta"><span class="status s-live">Live</span><span class="chip">AppFolio</span><span class="chip">Google Sheets</span><span class="chip">Apps Script</span></div>
+        <details class="case">
+          <summary>Case study: from report export to availability view</summary>
+          <dl class="case-body">
+            <dt>The problem</dt>
+            <dd>AppFolio reports arrived as emailed exports. Someone opened each one, pasted it into a sheet, fixed the columns, and rebuilt the leadership numbers by hand. During showings, agents cross-referenced three different date fields to answer "is this unit available, and from when?"</dd>
+            <dt>My part</dt>
+            <dd>Built the import system, the per-property dashboards, the executive roll-up, and the availability view. About 5,800 lines of Apps Script, written and maintained by me.</dd>
+            <dt>How it flows</dt>
+            <dd><figure class="figure">
+              <svg class="dia" viewBox="0 0 640 230" role="img" aria-labelledby="rep-dia-title">
+                <title id="rep-dia-title">Reporting pipeline: AppFolio report exports are imported on a schedule into a raw tab, cleaned and normalized, given calculated fields, then feed per-property dashboards that roll into an executive view, and a separate availability view with an occupancy timeline.</title>
+                <rect class="box" x="8" y="60" width="104" height="52" rx="4"/>
+                <text class="m" x="18" y="78">EXPORT</text><text class="t" x="18" y="98">AppFolio reports</text>
+                <rect class="box" x="140" y="60" width="96" height="52" rx="4"/>
+                <text class="m" x="150" y="78">SCHEDULED</text><text class="t" x="150" y="98">Raw tab</text>
+                <rect class="box" x="264" y="60" width="104" height="52" rx="4"/>
+                <text class="m" x="274" y="78">CLEANUP</text><text class="t" x="274" y="98">Normalize names</text>
+                <rect class="box rule" x="396" y="60" width="104" height="52" rx="4"/>
+                <text class="m" x="406" y="78">CALCULATED</text><text class="t" x="406" y="98">One avail. date</text>
+                <!-- outputs -->
+                <rect class="box db" x="528" y="12" width="104" height="44" rx="4"/>
+                <text class="t" x="538" y="30">Per-property</text><text class="t" x="538" y="47">dashboards</text>
+                <rect class="box db" x="528" y="70" width="104" height="44" rx="4"/>
+                <text class="t" x="538" y="88">Executive</text><text class="t" x="538" y="105">roll-up</text>
+                <rect class="box db" x="528" y="128" width="104" height="44" rx="4"/>
+                <text class="t" x="538" y="146">Availability</text><text class="t" x="538" y="163">283 units</text>
+                <rect class="box db" x="528" y="180" width="104" height="40" rx="4"/>
+                <text class="t" x="538" y="198">Occupancy</text><text class="t" x="538" y="213">timeline</text>
+                <path class="edge" d="M112 86 L140 86"/>
+                <path class="edge" d="M236 86 L264 86"/>
+                <path class="edge" d="M368 86 L396 86"/>
+                <path class="edge" d="M500 86 C514 86 514 34 528 34"/>
+                <path class="edge" d="M500 86 C514 86 514 92 528 92"/>
+                <path class="edge" d="M500 86 C514 86 514 150 528 150"/>
+                <path class="edge" d="M500 86 C514 86 514 200 528 200"/>
+                <path class="edge" d="M580 56 L580 70"/>
+                <text class="m" x="140" y="146">REFRESH CHAIN</text>
+                <text class="t" x="140" y="166">Dashboards update on a schedule or on the manual button;</text>
+                <text class="t" x="140" y="184">the availability view refreshes right after, never on its own timer.</text>
+              </svg>
+              <figcaption>Pipeline. The raw export is never edited; every fix happens in a later step so a bad report can be re-run.</figcaption>
+            </figure>
+            <ul>
+              <li>Scheduled job finds the newest report exports and pulls them into a raw tab, untouched.</li>
+              <li>Cleanup step normalizes property and unit names so every report agrees on what a unit is called.</li>
+              <li>Calculated fields derive one availability date per unit from the three date fields that used to be checked by hand.</li>
+              <li>Per-property dashboards update from the clean data, and the highlights roll into one executive view.</li>
+              <li>The availability view lists open and upcoming units across 283 units, plus an occupancy timeline for one building, and refreshes on the same schedule as the dashboards.</li>
+            </ul></dd>
+            <dt>Hard decisions</dt>
+            <dd><ul>
+              <li>Keep the raw export untouched and do every fix in a separate step, so a bad report can be re-run without losing work.</li>
+              <li>Let the team keep their own layout, column widths, and notes across refreshes. The first version wiped them, and nobody used it.</li>
+              <li>Chain the refreshes: when the main dashboard updates, the availability view updates right after, instead of on its own timer.</li>
+            </ul></dd>
+            <dt>What it looks like</dt>
+            <dd><figure class="figure">
+              <div class="mock-wrap">
+                <div class="label">Availability view · recreated with sample data</div>
+                <table class="mock">
+                  <thead><tr><th>Property</th><th>Unit</th><th>Bed</th><th>Status</th><th>Available on</th><th>Next move-in</th></tr></thead>
+                  <tbody>
+                    <tr><td>Maple Court</td><td>204</td><td>B</td><td><span class="pill">Open</span></td><td>Oct 24, 2026</td><td>—</td></tr>
+                    <tr><td>Maple Court</td><td>311</td><td>A</td><td><span class="pill soon">Notice</span></td><td>Nov 30, 2026</td><td>Dec 15, 2026</td></tr>
+                    <tr><td>Hilltop Lofts</td><td>12</td><td>C</td><td><span class="pill">Open</span></td><td>Today</td><td>—</td></tr>
+                    <tr><td>Hilltop Lofts</td><td>18</td><td>A</td><td><span class="pill soon">Notice</span></td><td>Jan 2, 2027</td><td>—</td></tr>
+                    <tr><td>Westgate House</td><td>7</td><td>B</td><td><span class="pill">Open</span></td><td>Nov 1, 2026</td><td>Nov 8, 2026</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <figcaption>Property and unit names are invented. The real view lists 283 units with the same columns: one availability date per bed, derived from the three date fields agents used to cross-reference.</figcaption>
+            </figure></dd>
+            <dt>Results</dt>
+            <dd>Reports update on a schedule with a manual refresh button for anything urgent, and the leadership numbers no longer depend on one person pasting. Agents answer availability questions from one column.</dd>
+            <dt>Lessons</dt>
+            <dd>Normalize names before anything else. Never overwrite what the user typed. A refresh that runs on time beats one that's technically better but nobody trusts.</dd>
+          </dl>
+        </details>
       </article>
 
-      <article class="order">
-        <div class="order-top"><h3>Move-in survey</h3><span class="wo">WO-06 · Resident intake</span></div>
-        <p>A web form new residents fill out at move-in, so feedback and move-in details land in one structured place instead of scattered emails.</p>
-        <div class="pipe">
-          <div class="step"><span class="label">In</span><span>New resident answers</span></div><span class="arrow" aria-hidden="true">→</span>
-          <div class="step"><span class="label">Process</span><span>Hosted form with structured fields</span></div><span class="arrow" aria-hidden="true">→</span>
-          <div class="step"><span class="label">Out</span><span>Responses the team can sort and act on</span></div>
-        </div>
-        <div class="meta"><span class="status s-live">Live</span><span class="chip">Web form</span><span class="chip">Netlify</span></div>
-      </article>
 
       <article class="order">
-        <div class="order-top"><h3>Inbox draft agent</h3><span class="wo">WO-07 · AI assistant</span></div>
+        <div class="order-top"><h3>Inbox draft agent</h3><span class="wo">WO-06 · AI assistant</span></div>
         <p>An AI agent that checked the leasing inbox every 15 minutes and drafted replies to tenant questions, leads, and move-out requests in the team's voice. It only ever created drafts, so a person approved every message.</p>
         <div class="pipe">
           <div class="step"><span class="label">In</span><span>New business emails</span></div><span class="arrow" aria-hidden="true">→</span>
@@ -226,6 +421,17 @@ footer p{margin:0;color:var(--muted);max-width:62ch}
         </div>
         <div class="meta"><span class="status s-retired">Retired</span><span class="chip">Claude</span><span class="chip">Gmail</span><span class="chip">Style guide prompt</span></div>
         <p class="note">Retired once the inbox mix shifted toward automated alerts. Knowing when to switch something off is part of the job.</p>
+      </article>
+
+      <article class="order">
+        <div class="order-top"><h3>Move-in survey</h3><span class="wo">WO-07 · Resident intake</span></div>
+        <p>A web form new residents fill out at move-in, so feedback and move-in details land in one structured place instead of scattered emails.</p>
+        <div class="pipe">
+          <div class="step"><span class="label">In</span><span>New resident answers</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Process</span><span>Hosted form with structured fields</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="step"><span class="label">Out</span><span>Responses the team can sort and act on</span></div>
+        </div>
+        <div class="meta"><span class="status s-live">Live</span><span class="chip">Web form</span><span class="chip">Netlify</span></div>
       </article>
 
     </div>
@@ -261,7 +467,7 @@ footer p{margin:0;color:var(--muted);max-width:62ch}
       <h2>Where the habits come from</h2>
     </div>
     <ol class="history">
-      <li><time>2025 – present</time><div><b>Zuma Housing</b> · Sales Back-End Admin Specialist<span>Leasing for a UCLA-area portfolio, plus solo builder of the internal platform and automations above.</span></div></li>
+      <li><time>2025 – present</time><div><b>Zuma Housing</b> · Sales Admin Specialist (Sales Operations and Internal Tools)<span>Leasing for a UCLA-area portfolio, plus solo builder of the internal platform and automations above.</span></div></li>
       <li><time>2020 – 2025</time><div><b>Pru Life UK</b> · Unit Manager, Licensed Financial Consultant<span>Led a team of 30+ consultants.</span></div></li>
       <li><time>2018 – 2020</time><div><b>Southville International School and Colleges</b> · Mathematics Teacher<span>Built an automated mailing system and trained Math Olympiad students.</span></div></li>
       <li><time>2012 – 2014</time><div><b>Accenture</b> · Data Analyst</div></li>
@@ -271,8 +477,11 @@ footer p{margin:0;color:var(--muted);max-width:62ch}
 
   <footer>
     <h2>Let's talk</h2>
-    <p>Based in the Philippines, working remotely with US teams. Walkthroughs of any project above are available on a call, with confidential data removed.</p>
-    <a href="https://www.linkedin.com/in/bryanknows" target="_blank" rel="noopener">Message me on LinkedIn: linkedin.com/in/bryanknows</a>
+    <p>Based in the Philippines, working remotely with US teams. If you're hiring for automation, business systems, or property operations, I'd like to hear about it. Walkthroughs of any project above are available on a call, with confidential data removed.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:jambryhane18@yahoo.com?subject=Your%20portfolio">Email jambryhane18@yahoo.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/bryanknows" target="_blank" rel="noopener">Message on LinkedIn</a>
+    </div>
   </footer>
 
 </div>
